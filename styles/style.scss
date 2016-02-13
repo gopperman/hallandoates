@@ -10,6 +10,13 @@ $blue: #1FC6CC;
 $pink: #FF0DAE;
 $white: #fff;
 
+/** Z-indexes **/
+$bottom: 0;
+$low: 25;
+$middle: 50;
+$high: 75;
+$space: 99;
+
 /** Mixins **/
 @mixin full-screen() {
 	bottom: 0;
@@ -83,11 +90,18 @@ h1 {
 	overflow: scroll;
 	padding: 25px;
 	text-align: center;
-	z-index: 99;
+	z-index: $high;
 }
 
 #contact {
 	font-size: $font-xs;
+}
+
+#social {
+	position: absolute;
+	right: 8px;
+	top: 8px;
+	z-index: $space;
 }
 
 @media (min-width: 768px) {

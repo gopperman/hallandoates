@@ -1,5 +1,6 @@
 /** Fonts **/
 /** Colors **/
+/** Z-indexes **/
 /** Mixins **/
 /** Layout **/
 * {
@@ -68,11 +69,18 @@ h1 {
   overflow: scroll;
   padding: 25px;
   text-align: center;
-  z-index: 99;
+  z-index: 75;
 }
 
 #contact {
   font-size: 0.6em;
+}
+
+#social {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  z-index: 99;
 }
 
 @media (min-width: 768px) {
