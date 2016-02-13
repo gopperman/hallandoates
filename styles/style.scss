@@ -32,17 +32,12 @@ $space: 99;
 }
 
 body {
-	background: url('../img/bg.gif') no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
 	color: $white;
 	font-family: 'Montserrat', sans-serif;
 	margin: 0;
 }
 
-section {
+section, .nav {
 	width: 100%;
 }
 
@@ -66,7 +61,7 @@ h1 {
 	background: $blue;
 	color: $white;
 	display: block;
-	margin: 1em 0;
+	margin: 1em 10px;
 	padding: 12px;
 	text-decoration: none;
 
@@ -80,13 +75,72 @@ h1 {
 	background: darken($blue, 10%);
 }
 
+.nav__item {
+	display: block;
+	font-size: $font-lg;
+	margin: 1em 0;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+
+	&:hover {
+		text-decoration: underline;
+	}
+
+	&.active {
+		color: $blue;
+	}
+}
+
+.nav {
+	list-style-type: none;
+	padding: 20px;
+}
+
+.nav__close {
+	font-weight: 100;
+	position: absolute;
+	top: 8px;
+	left: 8px;
+	&:hover {
+		cursor: hand;
+		cursor: pointer;
+	}
+}
+
+.overlay {
+	@include full-screen();
+
+	align-items: center;
+	background: rgba($pink, .5);
+	display: flex;
+	justify-content: center;
+
+	&.closed {
+		height: 0;
+		overflow: hidden;
+		width: 0;
+		right: auto;
+		top:auto;
+		transition: all, .4s;
+	}
+
+	&.open {
+		height: 100%;
+		overflow: scroll;
+		transition: all, .4s;
+		width: 100%;
+	}
+}
+
 /** Sections **/
 #intro {
 	@include full-screen();
-	align-items: center;
-	display: flex;
-	background: rgba($pink, .5);
-	justify-content: center;
+	background: url('../img/bg.gif') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 	overflow: scroll;
 	padding: 25px;
 	text-align: center;
@@ -102,6 +156,10 @@ h1 {
 	right: 8px;
 	top: 8px;
 	z-index: $space;
+}
+
+#songs {
+	display: block;
 }
 
 .fb_iframe_widget {

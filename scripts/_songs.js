@@ -32,14 +32,6 @@ var songs = [
 		'thumbnail': 'privateyes.jpg',
 	},
 	{
-		'id': 'ccenFp_3kq8',
-		'title': "I Can't Go For That (No Can Do)",
-		'year': '1981',
-		'album': 'Private Eyes',
-		'slug': 'i-cant-go-for-that',
-		'thumbnail': 'icantgoforthat.jpg',
-	},
-	{
 		'id': 'yRYFKcMa_Ek',
 		'title': 'Maneater',
 		'year': '1982',
@@ -94,5 +86,13 @@ var songs = [
 		'album': 'H2O',
 		'slug': 'family-man',
 		'thumbnail': 'familyman.jpg',
+	},
+	{
+		'id': 'ccenFp_3kq8',
+		'title': "I Can't Go For That (No Can Do)",
+		'year': '1981',
+		'album': 'Private Eyes',
+		'slug': 'i-cant-go-for-that',
+		'thumbnail': 'icantgoforthat.jpg',
 	},
 ];
