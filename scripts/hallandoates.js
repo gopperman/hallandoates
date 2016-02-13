@@ -1,4 +1,4 @@
-// M-E-T-H-O-Ds O-F controlling the website
+// M-E-T-H-O-D O-F controlling the website
 function HallandOates() {
 	this.baseURI = document.URL;
 	this.queue = 0;
@@ -40,12 +40,32 @@ function HallandOates() {
 		return array;
 	};
 
-	this.next = function() {
-		return;
-	};
+	this.youtubeInit = function() {
+		console.log('we doing this');
+		if (this.queue === songs.length ) {
+			this.queue = 0;
+		}
+		console.log(songs[this.queue].slug);
+		player = new YT.Player('video', {
+			width: '100%',
+			videoId: songs[this.queue].id,
+			playerVars: { 
+				'autoplay': 1, 
+				'controls': 0,
+				'showinfo': 0,
+				'enablejsapi': 1,
+				'rel': 0,
+				'iv_load_policy': 3,
+				'wmode': 'opaque',
+				'origin': 'http://hallandoat.es'
+			},
+			events: {
+        		'onStateChange': onPlayerStateChange
+			},
+		});
+		//Update sidebar and history
 
-	this.hideIntro = function() {
-		return;
+		this.queue++;
 	};
 
 	this.updateNav = function() {
@@ -72,13 +92,26 @@ function HallandOates() {
 
 var hao = hao || new HallandOates();
 
+function onPlayerStateChange(newState) {
+	if (newState['data'] == 0) {
+		hao.next();
+	}
+}
+
 $(document).ready( function() {
+	//Loads youtube API asynchronously
+	var tag = document.createElement('script');
+
+	tag.src = "http://www.youtube.com/iframe_api";
+	var firstScriptTag = document.getElementsByTagName('script')[0];
+	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);	
+
 	$('.cta').click( function( event ){
 		hao.hideIntro();
 		var first = $(this).hasClass('nocando') ? 'i-cant-go-for-that' : '';
-		console.log(first);
 		hao.randomizeQueue( first );
-		hao.next();
+		console.log('pregame');
+		hao.youtubeInit();
 	});
 	$('.nav__close').click (function() {
 		hao.navContainer.toggleClass('open', 'closed');
