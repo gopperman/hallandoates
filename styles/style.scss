@@ -6,6 +6,7 @@ $font-lg: 1.6em;
 $font-xl: 2.2em;
 
 /** Colors **/
+$black: #222;
 $blue: #1FC6CC;
 $pink: #FF0DAE;
 $white: #fff;
@@ -20,6 +21,7 @@ $space: 99;
 /** Mixins **/
 @mixin full-screen() {
 	bottom: 0;
+	height: 100%;
 	left: 0;
 	position: absolute;
 	top: 0;
@@ -160,6 +162,11 @@ h1 {
 
 #songs {
 	display: block;
+}
+
+#video {
+	@include full-screen();
+	background: $black;
 }
 
 .fb_iframe_widget {
