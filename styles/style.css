@@ -83,6 +83,10 @@ h1 {
   z-index: 99;
 }
 
+.fb_iframe_widget {
+  top: -4px;
+}
+
 @media (min-width: 768px) {
   .cta {
     display: inline-block;
