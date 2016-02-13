@@ -1,4 +1,4 @@
-/** Typography **/
+/** Fonts **/
 $font-xs: .6em;
 $font-sm: .8em;
 $font-md: 1em;
@@ -19,9 +19,11 @@ $white: #fff;
 	right: 0;
 }
 
+/** Layout **/
 * {
 	box-sizing: border-box;
 }
+
 body {
 	background: url('../img/bg.gif') no-repeat center center fixed;
 	-webkit-background-size: cover;
@@ -33,6 +35,11 @@ body {
 	margin: 0;
 }
 
+section {
+	width: 100%;
+}
+
+/** Typography **/
 a {
 	color: $white;
 }
@@ -47,6 +54,7 @@ h1 {
 	color: $white;
 }
 
+/** Components **/
 .cta {
 	background: $blue;
 	color: $white;
@@ -65,9 +73,13 @@ h1 {
 	background: darken($blue, 10%);
 }
 
+/** Sections **/
 #intro {
 	@include full-screen();
+	align-items: center;
+	display: flex;
 	background: rgba($pink, .5);
+	justify-content: center;
 	overflow: scroll;
 	padding: 25px;
 	text-align: center;
@@ -78,7 +90,7 @@ h1 {
 	font-size: $font-xs;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 768px) {
 	.cta {
 		display: inline-block;
 		font-size: $font-lg;
