@@ -1,0 +1,88 @@
+/** Typography **/
+$font-xs: .6em;
+$font-sm: .8em;
+$font-md: 1em;
+$font-lg: 1.6em;
+$font-xl: 2.2em;
+
+/** Colors **/
+$blue: #1FC6CC;
+$pink: #FF0DAE;
+$white: #fff;
+
+/** Mixins **/
+@mixin full-screen() {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+body {
+	background: url('../img/bg.gif') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	color: $white;
+	font-family: 'Montserrat', sans-serif;
+	margin: 0;
+}
+
+a {
+	color: $white;
+}
+
+p {
+	margin: 1em 0;
+}
+
+h1 {
+	font-size: $font-xl;
+	font-weight: bold;
+	color: $white;
+}
+
+.cta {
+	background: $blue;
+	color: $white;
+	display: block;
+	margin: 1em 0;
+	padding: 12px;
+	text-decoration: none;
+
+	&:hover, &:active {
+		background: lighten($blue, 10%);
+		text-decoration: none;
+	}
+}
+
+.nocando {
+	background: darken($blue, 10%);
+}
+
+#intro {
+	@include full-screen();
+	background: rgba($pink, .5);
+	overflow: scroll;
+	padding: 25px;
+	text-align: center;
+	z-index: 99;
+}
+
+#contact {
+	font-size: $font-xs;
+}
+
+@media (min-width: 600px) {
+	.cta {
+		display: inline-block;
+		font-size: $font-lg;
+		margin: 1em 6px;
+		width: 45%;
+	}
+}

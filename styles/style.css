@@ -1,0 +1,74 @@
+/** Typography **/
+/** Colors **/
+/** Mixins **/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: url("../img/bg.gif") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+}
+
+a {
+  color: #fff;
+}
+
+p {
+  margin: 1em 0;
+}
+
+h1 {
+  font-size: 2.2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+.cta {
+  background: #1FC6CC;
+  color: #fff;
+  display: block;
+  margin: 1em 0;
+  padding: 12px;
+  text-decoration: none;
+}
+.cta:hover, .cta:active {
+  background: #3ddce1;
+  text-decoration: none;
+}
+
+.nocando {
+  background: #189ba0;
+}
+
+#intro {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: rgba(255, 13, 174, 0.5);
+  overflow: scroll;
+  padding: 25px;
+  text-align: center;
+  z-index: 99;
+}
+
+#contact {
+  font-size: 0.6em;
+}
+
+@media (min-width: 600px) {
+  .cta {
+    display: inline-block;
+    font-size: 1.6em;
+    margin: 1em 6px;
+    width: 45%;
+  }
+}

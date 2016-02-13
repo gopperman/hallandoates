@@ -1,7 +1,5 @@
 var gulp = require('gulp'),
     sass = require('gulp-ruby-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    cssnano = require('gulp-cssnano'),
     jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
@@ -12,10 +10,7 @@ var gulp = require('gulp'),
 
 gulp.task('styles', function() {
   return sass('styles/*.scss', { style: 'expanded' })
-    .pipe(autoprefixer('last 2 version'))
     .pipe(gulp.dest('styles'))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(cssnano())
     .pipe(gulp.dest('styles'))
     .pipe(notify({ message: 'Styles task complete' }));
 });
