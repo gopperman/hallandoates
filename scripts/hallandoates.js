@@ -5,6 +5,7 @@ function HallandOates() {
 	this.initialized = false;
 	this.navContainer = $('#songs');
 	this.nav = $('.nav');
+	this.statusBar = $('#status');
 
 	//See if a specific song was requested
 	//Randomize queue
@@ -63,8 +64,7 @@ function HallandOates() {
         		'onStateChange': onPlayerStateChange
 			},
 		});
-		//Update sidebar and history
-
+		this.updateStatus( songs[this.queue] );
 		this.queue++;
 	};
 
@@ -73,9 +73,25 @@ function HallandOates() {
 
 		this.nav.empty();
 		for ( var i = 0; i < songs.length; i ++ ) {
-			markup = '<li><a href="#' + songs[i].slug + '" class="nav__item">' + songs[i].title + '</a>';
+			markup = '<li><a href="#' + songs[i].slug + '" class="nav__item nav__' + songs[i].slug + '">' + songs[i].title + '</a>';
 			this.nav.append( markup );
 		}
+	};
+
+	this.updateStatus = function( song ) {
+		$( this.statusBar ).empty();
+
+		$('.active').removeClass( 'active' );
+		$('.nav__' + song.slug ).addClass( 'active' );
+
+		var thumbnail = '<div class="song__thumbnail-container"><img src="img/' + song.thumbnail + '" /></div>'
+		$( this.statusBar ).append( thumbnail );
+
+		var info = '<div class="song__info">
+			<h2>' + song.title + '</h2>
+			<h3>' + song.album + ', ' + song.year + '</h3>
+		</div>';
+		$( this.statusBar ).append( info );
 	};
 
 	this.updateHistory = function() {
@@ -85,7 +101,7 @@ function HallandOates() {
 	};
 
 	this.hideIntro = function() {
-		$('#intro').fadeOut(500);
+		$('#intro').fadeOut( 500 );
 	};
 
 }
@@ -93,27 +109,27 @@ function HallandOates() {
 var hao = hao || new HallandOates();
 
 function onPlayerStateChange(newState) {
-	if (newState['data'] == 0) {
+	if ( newState['data'] == 0 ) {
 		hao.next();
 	}
 }
 
 $(document).ready( function() {
 	//Loads youtube API asynchronously
-	var tag = document.createElement('script');
+	var tag = document.createElement( 'script' );
 
 	tag.src = "http://www.youtube.com/iframe_api";
 	var firstScriptTag = document.getElementsByTagName('script')[0];
-	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);	
+	firstScriptTag.parentNode.insertBefore( tag, firstScriptTag );	
 
-	$('.cta').click( function( event ){
+	$( '.cta' ).click( function( event ){
 		hao.hideIntro();
-		var first = $(this).hasClass('nocando') ? 'i-cant-go-for-that' : '';
+		var first = $( this ).hasClass( 'nocando' ) ? 'i-cant-go-for-that' : '';
 		hao.randomizeQueue( first );
 		console.log('pregame');
 		hao.youtubeInit();
 	});
-	$('.nav__close').click (function() {
-		hao.navContainer.toggleClass('open', 'closed');
+	$( '.nav__close' ).click ( function() {
+		hao.navContainer.toggleClass( 'open', 'closed' );
 	});
 });

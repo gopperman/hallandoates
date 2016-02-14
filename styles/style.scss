@@ -58,6 +58,18 @@ h1 {
 	color: $white;
 }
 
+h2 {
+	font-size: $font-md;
+	font-weight: 500;
+	margin: .6em 0 .2em ;
+}
+h3 {
+	font-weight: 100;
+	font-size: $font-sm;
+	font-style: italic;
+	margin: .2em 0;
+}
+
 /** Components **/
 .cta {
 	background: $blue;
@@ -162,13 +174,39 @@ h1 {
 
 #songs {
 	display: block;
+	z-index: $high;
 }
 
 #video {
 	@include full-screen();
 	background: $black;
+	z-index: $low;
 }
 
+#status {
+	background: rgba($pink, .5);
+	bottom: 0;
+	left: 0;
+	height: 60px;
+	position: absolute;
+	right: 0;
+	z-index: $middle;
+	div {
+		float: left;
+	}
+}
+
+.song__info {
+	margin-left: 10px;
+}
+
+.song__thumbnail-container {
+	width: 60px;
+	img {
+		width: 100%;
+		height:100%;
+	}
+}
 .fb_iframe_widget {
 	top: -4px;
 }
