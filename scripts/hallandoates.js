@@ -23,7 +23,7 @@ function HallandOates() {
 
 	this.randomizeQueue = function( slug ) {
 		songs = this.shuffle( songs );
-		
+
 		if (typeof slug !== 'undefined') {
 			this.findSong( slug );
 		}
@@ -79,6 +79,12 @@ function HallandOates() {
 			markup = '<li><a href="#' + songs[i].slug + '" class="nav__item nav__' + songs[i].slug + '">' + songs[i].title + '</a>';
 			this.nav.append( markup );
 		}
+
+		$( '.nav__item' ).click( function( event ) {
+			var slug = $( this ).attr('href');
+			slug.replace('#','');
+			hao.play ( slug );
+		});
 	};
 
 	this.updateStatus = function( song ) {
