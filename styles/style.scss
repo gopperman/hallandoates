@@ -130,21 +130,17 @@ h3 {
 	background: rgba($pink, .5);
 	display: flex;
 	justify-content: center;
+}
 
-	&.closed {
-		height: 0;
-		overflow: hidden;
-		width: 0;
-		right: auto;
-		top:auto;
-		transition: all, .4s;
-	}
-
-	&.open {
-		height: 100%;
-		overflow: scroll;
-		transition: all, .4s;
-		width: 100%;
+#video__controls {
+	font-size: $font-lg;
+	margin: .6em;
+	span {
+		margin: 0 2px;
+		&:hover {
+			cursor: hand;
+			cursor: pointer;
+		}
 	}
 }
 
@@ -176,6 +172,20 @@ h3 {
 #songs {
 	display: block;
 	z-index: $high;
+
+	height: 0;
+	overflow: hidden;
+	width: 0;
+	right: auto;
+	top:auto;
+	transition: all, .4s;
+
+	&.open {
+		height: 100%;
+		overflow: scroll;
+		transition: all, .4s;
+		width: 100%;
+	}
 }
 
 #video {
@@ -218,5 +228,13 @@ h3 {
 		font-size: $font-lg;
 		margin: 1em 6px;
 		width: 45%;
+	}
+
+	#video__controls {
+		font-size: $font-xl;
+		margin: .25em .6em;
+		span {
+			margin: 0 4px;
+		}
 	}
 }

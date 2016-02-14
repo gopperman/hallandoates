@@ -107,19 +107,17 @@ h3 {
   display: flex;
   justify-content: center;
 }
-.overlay.closed {
-  height: 0;
-  overflow: hidden;
-  width: 0;
-  right: auto;
-  top: auto;
-  transition: all, .4s;
+
+#video__controls {
+  font-size: 1.6em;
+  margin: .6em;
 }
-.overlay.open {
-  height: 100%;
-  overflow: scroll;
-  transition: all, .4s;
-  width: 100%;
+#video__controls span {
+  margin: 0 2px;
+}
+#video__controls span:hover {
+  cursor: hand;
+  cursor: pointer;
 }
 
 /** Sections **/
@@ -155,6 +153,18 @@ h3 {
 #songs {
   display: block;
   z-index: 75;
+  height: 0;
+  overflow: hidden;
+  width: 0;
+  right: auto;
+  top: auto;
+  transition: all, .4s;
+}
+#songs.open {
+  height: 100%;
+  overflow: scroll;
+  transition: all, .4s;
+  width: 100%;
 }
 
 #video {
@@ -203,5 +213,13 @@ h3 {
     font-size: 1.6em;
     margin: 1em 6px;
     width: 45%;
+  }
+
+  #video__controls {
+    font-size: 2.2em;
+    margin: .25em .6em;
+  }
+  #video__controls span {
+    margin: 0 4px;
   }
 }

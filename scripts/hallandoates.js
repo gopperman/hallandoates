@@ -7,6 +7,8 @@ function HallandOates() {
 	this.navContainer = $('#songs');
 	this.nav = $('.nav');
 	this.statusBar = $('#status');
+	this.playPause = $('.video__play .fa');
+	this.player = [];
 
 	this.randomizeQueue = function( slug ) {
 		if ( '' === slug ) {
@@ -42,7 +44,7 @@ function HallandOates() {
 		}
 		this.vidContainer.empty().append('<div id="video"></div>');
 
-		player = new YT.Player('video', {
+		this.player = new YT.Player('video', {
 			width: '100%',
 			videoId: songs[this.queue].id,
 			playerVars: { 
@@ -74,19 +76,24 @@ function HallandOates() {
 	};
 
 	this.updateStatus = function( song ) {
-		$( this.statusBar ).empty();
-
 		$('.active').removeClass( 'active' );
 		$('.nav__' + song.slug ).addClass( 'active' );
 
-		var thumbnail = '<div class="song__thumbnail-container"><img src="img/' + song.thumbnail + '" /></div>'
-		$( this.statusBar ).append( thumbnail );
+		$( hao.playPause ).removeClass( 'fa-play' ).addClass( 'fa-pause' );
 
-		var info = '<div class="song__info">
-			<h2>' + song.title + '</h2>
-			<h3>' + song.album + ', ' + song.year + '</h3>
-		</div>';
-		$( this.statusBar ).append( info );
+		$.when(
+			$( '.song__info, .song__thumbnail-container' ).remove()
+		).then( function() {
+			var statusBar = $( '#status' );
+			var thumbnail = '<div class="song__thumbnail-container"><img src="img/' + song.thumbnail + '" /></div>'
+
+			var info = '<div class="song__info">
+				<h2>' + song.title + '</h2>
+				<h3>' + song.album + ', ' + song.year + '</h3>
+			</div>';
+			$( statusBar ).prepend( info );
+			$( statusBar ).prepend( thumbnail );
+		});
 	};
 
 	this.updateHistory = function() {
@@ -103,7 +110,7 @@ function HallandOates() {
 
 var hao = hao || new HallandOates();
 
-function onPlayerStateChange(newState) {
+function onPlayerStateChange( newState ) {
 	if ( newState['data'] == 0 ) {
 		hao.play();
 	}
@@ -123,7 +130,12 @@ $(document).ready( function() {
 		hao.randomizeQueue( first );
 		hao.play();
 	});
-	$( '.nav__close' ).click ( function() {
-		hao.navContainer.toggleClass( 'open', 'closed' );
+
+	$( '.nav__close, .nav__open' ).click ( function() {
+		hao.navContainer.toggleClass( 'open closed' );
+	});
+
+	$( '#video__skip').click ( function() {
+		hao.play();
 	});
 });
