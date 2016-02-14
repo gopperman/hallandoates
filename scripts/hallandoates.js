@@ -39,7 +39,7 @@ function HallandOates() {
 			this.queue = 0;
 		}
 		jQuery('#video').remove();
-		jQuery('main').append( jQuery('<div id="video"></div>'));
+		jQuery('body').append( $('<div id="video"></div>'));
 		player = new YT.Player('video', {
 			width: '100%',
 			videoId: songs[this.queue].id,
