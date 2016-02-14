@@ -2,16 +2,9 @@
 function HallandOates() {
 	this.baseURI = document.URL;
 	this.queue = 0;
-	this.initialized = false;
 	this.navContainer = $('#songs');
 	this.nav = $('.nav');
 	this.statusBar = $('#status');
-
-	//See if a specific song was requested
-	//Randomize queue
-	//Load first video
-
-	this.initialized = true;
 
 	this.randomizeQueue = function( slug ) {
 		if ( '' === slug ) {
@@ -41,12 +34,12 @@ function HallandOates() {
 		return array;
 	};
 
-	this.youtubeInit = function() {
-		console.log('we doing this');
+	this.play = function() {
 		if (this.queue === songs.length ) {
 			this.queue = 0;
 		}
-		console.log(songs[this.queue].slug);
+		jQuery('#video').remove();
+		jQuery('main').append( jQuery('<div id="video"></div>'));
 		player = new YT.Player('video', {
 			width: '100%',
 			videoId: songs[this.queue].id,
@@ -110,7 +103,7 @@ var hao = hao || new HallandOates();
 
 function onPlayerStateChange(newState) {
 	if ( newState['data'] == 0 ) {
-		hao.youtubeInit();
+		hao.play();
 	}
 }
 
@@ -127,7 +120,7 @@ $(document).ready( function() {
 		var first = $( this ).hasClass( 'nocando' ) ? 'i-cant-go-for-that' : '';
 		hao.randomizeQueue( first );
 		console.log('pregame');
-		hao.youtubeInit();
+		hao.play();
 	});
 	$( '.nav__close' ).click ( function() {
 		hao.navContainer.toggleClass( 'open', 'closed' );
