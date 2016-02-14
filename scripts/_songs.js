@@ -45,7 +45,7 @@ var songs = [
 		'year': '1973',
 		'album': 'Abandoned Luncheonette',
 		'slug': 'shes-gone',
-		'thumbnail': 'shesgone.jpg',
+		'thumbnail': 'shesgone.png',
 	},
 	{
 		'id': '6EwOOdrx4G0',

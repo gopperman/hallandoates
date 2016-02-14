@@ -3,7 +3,7 @@ function HallandOates() {
 	this.baseURI = document.URL;
 	this.queue = 0;
 	this.body = $('body');
-	this.vidContainer = $('video__container');
+	this.vidContainer = $('#video__container');
 	this.navContainer = $('#songs');
 	this.nav = $('.nav');
 	this.statusBar = $('#status');
@@ -47,7 +47,7 @@ function HallandOates() {
 			videoId: songs[this.queue].id,
 			playerVars: { 
 				'autoplay': 1, 
-				'controls': 0,
+				'controls': 1,
 				'showinfo': 0,
 				'enablejsapi': 1,
 				'rel': 0,
