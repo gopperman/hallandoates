@@ -52,7 +52,7 @@ function HallandOates() {
 			videoId: songs[this.queue].id,
 			playerVars: { 
 				'autoplay': 1, 
-				'controls': 0,
+				'controls': 1,
 				'showinfo': 0,
 				'enablejsapi': 1,
 				'rel': 0,
@@ -110,7 +110,7 @@ var hao = hao || new HallandOates();
 
 function onPlayerStateChange(newState) {
 	if ( newState['data'] == 0 ) {
-		hao.next();
+		hao.youtubeInit();
 	}
 }
 
