@@ -41,13 +41,13 @@ function HallandOates() {
 			this.queue = 0;
 		}
 		this.vidContainer.empty().append('<div id="video"></div>');
-		
+
 		player = new YT.Player('video', {
 			width: '100%',
 			videoId: songs[this.queue].id,
 			playerVars: { 
 				'autoplay': 1, 
-				'controls': 1,
+				'controls': 0,
 				'showinfo': 0,
 				'enablejsapi': 1,
 				'rel': 0,
