@@ -12,7 +12,6 @@ function HallandOates() {
 
 	this.findSong = function ( slug ) {
 		var i = songs.length;
-
 		while ( i-- ) {
 			if ( songs[i].slug === slug ) {
 				this.pos = i;
@@ -43,7 +42,7 @@ function HallandOates() {
 	};
 
 	this.play = function( slug ) {
-		if (typeof slug !== 'undefined') {
+		if ( 'undefined' !== typeof slug ) {
 			this.findSong ( slug );
 		} else if (this.pos === songs.length ) {
 			this.pos = 0;
@@ -82,8 +81,7 @@ function HallandOates() {
 
 		$( '.nav__item' ).click( function( event ) {
 			var slug = $( this ).attr('href');
-			slug.replace('#','');
-			hao.play ( slug );
+			hao.play ( slug.replace('#','') );
 		});
 	};
 

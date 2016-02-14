@@ -12,7 +12,7 @@ var songs = [
 		'title': 'Possession Obsession',
 		'year': '1984',
 		'album': 'Big Bam Boom',
-		'slug': 'posssession-obsession',
+		'slug': 'possession-obsession',
 		'thumbnail': 'bigbamboom.jpg',
 	},
 	{
