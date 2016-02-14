@@ -47,7 +47,7 @@ function HallandOates() {
 			videoId: songs[this.queue].id,
 			playerVars: { 
 				'autoplay': 1, 
-				'controls': 1,
+				'controls': 0,
 				'showinfo': 0,
 				'enablejsapi': 1,
 				'rel': 0,
