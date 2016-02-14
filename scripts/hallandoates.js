@@ -1,7 +1,7 @@
 // M-E-T-H-O-D O-F controlling the website
 function HallandOates() {
 	this.baseURI = document.URL;
-	this.queue = 0;
+	this.pos = 0;
 	this.body = $('body');
 	this.vidContainer = $('#video__container');
 	this.navContainer = $('#songs');
@@ -10,20 +10,24 @@ function HallandOates() {
 	this.playPause = $('.video__play .fa');
 	this.player = [];
 
-	this.randomizeQueue = function( slug ) {
-		if ( '' === slug ) {
-			songs = this.shuffle( songs );
-		} else {
-			var i = songs.length;
-			while ( i-- ) {
-				if ( songs[i].slug === slug ) {
-					var first = songs.splice(i, 1);
-					break;
-				}
+	this.findSong = function ( slug ) {
+		var i = songs.length;
+
+		while ( i-- ) {
+			if ( songs[i].slug === slug ) {
+				this.pos = i;
+				return;
 			}
-			songs = this.shuffle( songs );
-			songs.unshift( first[0] );
 		}
+	};
+
+	this.randomizeQueue = function( slug ) {
+		songs = this.shuffle( songs );
+		
+		if (typeof slug !== 'undefined') {
+			this.findSong( slug );
+		}
+
 		this.updateNav();
 	};
 
@@ -38,15 +42,17 @@ function HallandOates() {
 		return array;
 	};
 
-	this.play = function() {
-		if (this.queue === songs.length ) {
-			this.queue = 0;
+	this.play = function( slug ) {
+		if (typeof slug !== 'undefined') {
+			this.findSong ( slug );
+		} else if (this.pos === songs.length ) {
+			this.pos = 0;
 		}
 		this.vidContainer.empty().append('<div id="video"></div>');
 
 		this.player = new YT.Player('video', {
 			width: '100%',
-			videoId: songs[this.queue].id,
+			videoId: songs[this.pos].id,
 			playerVars: { 
 				'autoplay': 1, 
 				'controls': 0,
@@ -61,8 +67,8 @@ function HallandOates() {
         		'onStateChange': onPlayerStateChange
 			},
 		});
-		this.updateStatus( songs[this.queue] );
-		this.queue++;
+		this.updateStatus( songs[this.pos] );
+		this.pos++;
 	};
 
 	this.updateNav = function() {
