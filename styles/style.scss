@@ -4,6 +4,7 @@ $font-sm: .8em;
 $font-md: 1em;
 $font-lg: 1.6em;
 $font-xl: 2.2em;
+$font-xxl: 3.4em;
 
 /** Colors **/
 $black: #222;
@@ -55,19 +56,19 @@ p {
 }
 
 h1 {
-	font-size: $font-xl;
+	font-size: $font-xxl;
 	font-weight: bold;
 	color: $white;
 }
 
 h2 {
-	font-size: $font-md;
+	font-size: $font-xl;
 	font-weight: 500;
 	margin: .6em 0 .2em ;
 }
 h3 {
 	font-weight: 100;
-	font-size: $font-sm;
+	font-size: $font-lg;
 	font-style: italic;
 	margin: .2em 0;
 }
@@ -92,7 +93,7 @@ h3 {
 
 .nav__item {
 	display: block;
-	font-size: $font-lg;
+	font-size: $font-xl;
 	margin: 1em 0;
 	text-align: center;
 	text-transform: uppercase;
@@ -132,7 +133,7 @@ h3 {
 }
 
 #video__controls {
-	font-size: $font-lg;
+	font-size: $font-xxl;
 	margin: .6em;
 	span {
 		margin: 0 2px;
@@ -224,11 +225,28 @@ h3 {
 }
 
 @media (min-width: 768px) {
+	h1 {
+		font-size: $font-xl;
+	}
+
+	h2 {
+		font-size: $font-md;
+
+	}
+	h3 {
+		font-size: $font-sm;
+	}
+
 	.cta {
 		display: inline-block;
 		font-size: $font-lg;
 		margin: 1em 6px;
 		width: 45%;
+	}
+
+
+	.nav__item {
+		font-size: $font-lg;
 	}
 
 	#songs {
