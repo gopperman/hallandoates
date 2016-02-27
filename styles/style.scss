@@ -47,6 +47,7 @@ section, .nav {
 /** Typography **/
 a {
 	color: $white;
+	text-decoration: none;
 }
 
 p {
@@ -78,7 +79,6 @@ h3 {
 	display: block;
 	margin: 1em 10px;
 	padding: 12px;
-	text-decoration: none;
 
 	&:hover, &:active {
 		background: lighten($blue, 10%);
@@ -95,7 +95,6 @@ h3 {
 	font-size: $font-lg;
 	margin: 1em 0;
 	text-align: center;
-	text-decoration: none;
 	text-transform: uppercase;
 
 	&:hover {
