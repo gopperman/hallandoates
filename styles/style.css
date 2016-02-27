@@ -238,6 +238,7 @@ h3 {
 
   #status {
     height: 90px;
+    overflow: hidden;
   }
 
   #video__controls {
