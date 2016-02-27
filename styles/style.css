@@ -29,20 +29,20 @@ p {
 }
 
 h1 {
-  font-size: 3.4em;
+  font-size: 2.2em;
   font-weight: bold;
   color: #fff;
 }
 
 h2 {
-  font-size: 2.2em;
+  font-size: 1em;
   font-weight: 500;
   margin: 0.6em 0 0.2em;
 }
 
 h3 {
   font-weight: 100;
-  font-size: 1.6em;
+  font-size: 0.8em;
   font-style: italic;
   margin: .2em 0;
 }
@@ -66,7 +66,7 @@ h3 {
 
 .nav__item {
   display: block;
-  font-size: 2.2em;
+  font-size: 1.6em;
   margin: 1em 0;
   text-align: center;
   text-transform: uppercase;
@@ -108,7 +108,7 @@ h3 {
 }
 
 #video__controls {
-  font-size: 3.4em;
+  font-size: 1.6em;
   margin: .6em;
 }
 #video__controls span {
@@ -209,28 +209,33 @@ h3 {
   top: -4px;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 767px) and (orientation: portrait) {
   h1 {
-    font-size: 2.2em;
+    font-size: 3.4em;
   }
 
   h2 {
-    font-size: 1em;
+    font-size: 1.6em;
   }
 
   h3 {
-    font-size: 0.8em;
+    font-size: 1em;
   }
 
+  .nav__item {
+    font-size: 2.2em;
+  }
+
+  #contact {
+    font-size: 0.8em;
+  }
+}
+@media (min-width: 768px) {
   .cta {
     display: inline-block;
     font-size: 1.6em;
     margin: 1em 6px;
     width: 45%;
-  }
-
-  .nav__item {
-    font-size: 1.6em;
   }
 
   #songs.open {
