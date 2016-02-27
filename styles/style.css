@@ -234,6 +234,10 @@ h3 {
   .song__thumbnail-container {
     display: none;
   }
+
+  #status {
+    height: 90px;
+  }
 }
 @media (min-width: 768px) {
   .cta {

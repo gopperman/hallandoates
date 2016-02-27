@@ -245,8 +245,13 @@ h3 {
 	#contact {
 		font-size: $font-md;
 	}
+
 	.song__thumbnail-container {
 		display: none;
+	}
+
+	#status {
+		height: 90px;
 	}
 }
 
