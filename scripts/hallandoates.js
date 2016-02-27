@@ -81,6 +81,7 @@ function HallandOates() {
 		}
 
 		$( '.nav__item' ).click( function( event ) {
+			event.stopPropagation();
 			var slug = $( this ).attr('href');
 			hao.play ( slug.replace('#','') );
 		});
@@ -146,7 +147,7 @@ $(document).ready( function() {
 		hao.play();
 	});
 
-	$( '.nav__close, .nav__open' ).click ( function() {
+	$( '.nav__close, .nav__open, #songs' ).click ( function() {
 		hao.navContainer.toggleClass( 'open closed' );
 	});
 

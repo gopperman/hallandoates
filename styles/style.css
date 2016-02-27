@@ -154,6 +154,8 @@ h3 {
   z-index: 75;
   height: 0;
   overflow: hidden;
+  padding-left: 12.5%;
+  padding-right: 12.5%;
   width: 0;
   right: auto;
   top: auto;
@@ -212,6 +214,11 @@ h3 {
     font-size: 1.6em;
     margin: 1em 6px;
     width: 45%;
+  }
+
+  #songs {
+    padding-left: 25%;
+    padding-right: 25%;
   }
 
   #video__controls {
