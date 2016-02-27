@@ -198,6 +198,7 @@ h3 {
 }
 
 .song__thumbnail-container {
+  display: none;
   width: 60px;
 }
 .song__thumbnail-container img {
@@ -228,6 +229,10 @@ h3 {
 
   #contact {
     font-size: 0.8em;
+  }
+
+  .song__thumbnail-container {
+    display: none;
   }
 }
 @media (min-width: 768px) {
