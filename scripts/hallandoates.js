@@ -147,7 +147,7 @@ $(document).ready( function() {
 		hao.play();
 	});
 
-	$( '.nav__close, .nav__open, #songs' ).click ( function() {
+	$( '.nav__open, #songs' ).click ( function() {
 		hao.navContainer.toggleClass( 'open closed' );
 	});
 
