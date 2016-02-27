@@ -68,6 +68,7 @@ function HallandOates() {
 		});
 		this.updateStatus( songs[this.pos] );
 		this.pos++;
+		ga('send', 'songplay');
 	};
 
 	this.updateNav = function() {
@@ -95,11 +96,15 @@ function HallandOates() {
 			$( '.song__info, .song__thumbnail-container' ).remove()
 		).then( function() {
 			var statusBar = $( '#status' );
-			var thumbnail = '<div class="song__thumbnail-container"><img src="img/' + song.thumbnail + '" /></div>'
+			var thumbnail = '<div class="song__thumbnail-container">
+				<a href="' + song.link + '" target="_blank"><img src="img/' + song.thumbnail + '" /></a>
+			</div>'
 
 			var info = '<div class="song__info">
-				<h2>' + song.title + '</h2>
-				<h3>' + song.album + ', ' + song.year + '</h3>
+				<a href="' + song.link + '" target="_blank">
+					<h2>' + song.title + '</h2>
+					<h3>' + song.album + ', ' + song.year + '</h3>
+				</a>
 			</div>';
 			$( statusBar ).prepend( info );
 			$( statusBar ).prepend( thumbnail );

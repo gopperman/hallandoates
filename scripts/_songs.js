@@ -6,6 +6,7 @@ var songs = [
 		'album': 'Voices',
 		'slug': 'you-make-my-dreams',
 		'thumbnail': 'youmakemydreams.jpg',
+		'link': 'http://amzn.to/1n5yd0t',
 	},
 	{
 		'id': 'McOAjzart78',
@@ -14,6 +15,7 @@ var songs = [
 		'album': 'Big Bam Boom',
 		'slug': 'possession-obsession',
 		'thumbnail': 'bigbamboom.jpg',
+		'link': 'http://amzn.to/1Qkqnvy',
 	},
 	{
 		'id': 'D00M2KZH1J0',
@@ -22,6 +24,7 @@ var songs = [
 		'album': 'Big Bam Boom',
 		'slug': 'out-of-touch',
 		'thumbnail': 'outoftouch.jpg',
+		'link': 'http://amzn.to/1Qkqnvy',
 	},
 	{
 		'id': 'JsntlJZ9h1U',
@@ -30,6 +33,7 @@ var songs = [
 		'album': 'Private Eyes',
 		'slug': 'private-eyes',
 		'thumbnail': 'privateyes.jpg',
+		'link': 'http://amzn.to/1QOrWUM',
 	},
 	{
 		'id': 'yRYFKcMa_Ek',
@@ -38,6 +42,7 @@ var songs = [
 		'album': 'H2O',
 		'slug': 'maneater',
 		'thumbnail': 'maneater.jpg',
+		'link': 'http://amzn.to/1QOs7j1',
 	},
 	{
 		'id': 'vZZngTkp54I',
@@ -46,6 +51,7 @@ var songs = [
 		'album': 'Abandoned Luncheonette',
 		'slug': 'shes-gone',
 		'thumbnail': 'shesgone.png',
+		'link': 'http://amzn.to/1LMlPbY',
 	},
 	{
 		'id': '6EwOOdrx4G0',
@@ -54,6 +60,7 @@ var songs = [
 		'album': 'Bigger Than Both of Us',
 		'slug': 'rich-girl',
 		'thumbnail': 'richgirl.jpg',
+		'link': 'http://amzn.to/1LMlTZp',
 	},
 	{
 		'id': 'Q3F4c7E9IBU',
@@ -62,6 +69,7 @@ var songs = [
 		'album': 'Big Bam Boom',
 		'slug': 'method-of-modern-love',
 		'thumbnail': 'bigbamboom.jpg',
+		'link': 'http://amzn.to/1Qkqnvy',
 	},
 	{
 		'id': 'rrWXFxLIV3w',
@@ -70,6 +78,7 @@ var songs = [
 		'album': 'Private Eyes',
 		'slug': 'your-imagination',
 		'thumbnail': 'yourimagination.png',
+		'link': 'http://amzn.to/1QOrWUM',
 	},
 	{
 		'id': '_R5xIdXwNMk',
@@ -78,6 +87,7 @@ var songs = [
 		'album': "Rock 'n Soul, Part 1",
 		'slug': 'say-it-isnt-so',
 		'thumbnail': 'sayitisntso.jpg',
+		'link': 'http://amzn.to/1n5zV1M',
 	},
 	{
 		'id': '-oiqiYdWXiM',
@@ -86,6 +96,7 @@ var songs = [
 		'album': 'H2O',
 		'slug': 'family-man',
 		'thumbnail': 'familyman.jpg',
+		'link': 'http://amzn.to/1QOs7j1',
 	},
 	{
 		'id': 'ccenFp_3kq8',
@@ -94,5 +105,6 @@ var songs = [
 		'album': 'Private Eyes',
 		'slug': 'i-cant-go-for-that',
 		'thumbnail': 'icantgoforthat.jpg',
+		'link': 'http://amzn.to/1QOrWUM',
 	},
 ];
