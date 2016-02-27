@@ -232,6 +232,7 @@ h3 {
 
 	h2 {
 		font-size: $font-lg;
+		margin-right: 75px;
 
 	}
 	h3 {
@@ -252,6 +253,14 @@ h3 {
 
 	#status {
 		height: 90px;
+	}
+
+	#video__controls {
+		margin-left: 0;
+		margin-right: 10px;
+		position: absolute;
+		right: 0;
+		top: 0;
 	}
 }
 

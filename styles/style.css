@@ -217,6 +217,7 @@ h3 {
 
   h2 {
     font-size: 1.6em;
+    margin-right: 75px;
   }
 
   h3 {
@@ -237,6 +238,14 @@ h3 {
 
   #status {
     height: 90px;
+  }
+
+  #video__controls {
+    margin-left: 0;
+    margin-right: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 }
 @media (min-width: 768px) {
