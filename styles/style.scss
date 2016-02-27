@@ -227,7 +227,7 @@ h3 {
 
 @media (max-width: 767px) and ( orientation: portrait ) {
 	h1 {
-		font-size: $font-xxl;
+		font-size: $font-xl;
 	}
 
 	h2 {
@@ -235,15 +235,15 @@ h3 {
 
 	}
 	h3 {
-		font-size: $font-md;
+		font-size: $font-lg;
 	}
 
 	.nav__item {
-		font-size: $font-xl;
+		font-size: $font-lg;
 	}
 
 	#contact {
-		font-size: $font-sm;
+		font-size: $font-lg;
 	}
 	.song__thumbnail-container {
 		display: none;
