@@ -225,7 +225,7 @@ h3 {
 	top: -4px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767px) and ( orientation: portrait ) {
 	h1 {
 		font-size: $font-xl;
 	}
