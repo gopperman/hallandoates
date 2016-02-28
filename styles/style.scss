@@ -231,12 +231,12 @@ h3 {
 	}
 
 	h2 {
-		font-size: $font-lg;
+		font-size: 1.2em;
 		margin-right: 75px;
 
 	}
 	h3 {
-		font-size: $font-lg;
+		font-size: 1.2em;
 	}
 
 	.nav__item {
@@ -247,20 +247,12 @@ h3 {
 		font-size: $font-sm;
 	}
 
-	.song__info {
-		&.smaller {
-			h2, h3 {
-				font-size: 1.1em;
-			}
-		}
-	}
-
 	.song__thumbnail-container {
 		display: none;
 	}
 
 	#status {
-		height: 90px;
+		height: 75px;
 		overflow: hidden;
 	}
 
