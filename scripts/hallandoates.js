@@ -97,16 +97,22 @@ function HallandOates() {
 			$( '.song__info, .song__thumbnail-container' ).remove()
 		).then( function() {
 			var statusBar = $( '#status' );
+			var album = song.album + ', ' + song.year;
 			var thumbnail = '<div class="song__thumbnail-container">
 				<a href="' + song.link + '" target="_blank"><img src="img/' + song.thumbnail + '" /></a>
 			</div>'
 
-			var info = '<div class="song__info">
+			var info = '<div class="song__info';
+			if (album.length > 20 || song.title.length > 20 ) {
+				info += ' smaller';
+			}
+			info += '">
 				<a href="' + song.link + '" target="_blank">
 					<h2>' + song.title + '</h2>
-					<h3>' + song.album + ', ' + song.year + '</h3>
+					<h3>' +  album + '</h3>
 				</a>
 			</div>';
+
 			$( statusBar ).prepend( info );
 			$( statusBar ).prepend( thumbnail );
 		});
