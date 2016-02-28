@@ -247,14 +247,14 @@ h3 {
 		font-size: $font-sm;
 	}
 
-	#song__info {
+	.song__info {
 		&.smaller {
 			h2, h3 {
 				font-size: $font-md;
 			}
 		}
 	}
-	
+
 	.song__thumbnail-container {
 		display: none;
 	}

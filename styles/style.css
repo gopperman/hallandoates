@@ -232,7 +232,7 @@ h3 {
     font-size: 0.8em;
   }
 
-  #song__info.smaller h2, #song__info.smaller h3 {
+  .song__info.smaller h2, .song__info.smaller h3 {
     font-size: 1em;
   }
 
