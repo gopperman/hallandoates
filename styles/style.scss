@@ -35,6 +35,7 @@ $space: 99;
 }
 
 body {
+	-ms-overflow-style: none;
 	background: $black;
 	color: $white;
 	font-family: 'Montserrat', sans-serif;
