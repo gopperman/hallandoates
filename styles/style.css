@@ -236,6 +236,10 @@ h3 {
     display: none;
   }
 
+  .song__info.smaller h2 {
+    font-size: 1em;
+  }
+
   #status {
     height: 75px;
     overflow: hidden;

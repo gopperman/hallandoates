@@ -103,7 +103,7 @@ function HallandOates() {
 			</div>'
 
 			var info = '<div class="song__info';
-			if (album.length > 20 || song.title.length > 20 ) {
+			if (song.title.length > 30 ) {
 				info += ' smaller';
 			}
 			info += '">
